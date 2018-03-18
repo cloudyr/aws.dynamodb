@@ -2,7 +2,7 @@ Package: aws.dynamodb
 Type: Package
 Title: Amazon Web Services DynamoDB Client Package
 Version: 0.1.1
-Date: 2017-07-06
+Date: 2018-03-18
 Authors@R: c(person("Thomas J.", "Leeper", role = c("aut", "cre"),
                     email = "thosjleeper@gmail.com"))
 Description: A simple client for the Amazon Web Services ('AWS') 'DynamoDB' <https://aws.amazon.com/dynamodb/> 'API'.
@@ -11,5 +11,7 @@ URL: https://github.com/cloudyr/aws.dynamodb
 BugReports: https://github.com/cloudyr/aws.dynamodb/issues
 Imports:
     httr,
+    jsonlite,
+    xml2,
     aws.signature (>= 0.3.4)
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
