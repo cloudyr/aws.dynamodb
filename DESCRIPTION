@@ -4,7 +4,8 @@ Title: Amazon Web Services DynamoDB Client Package
 Version: 0.1.1
 Date: 2018-03-18
 Authors@R: c(person("Thomas J.", "Leeper", role = c("aut", "cre"),
-                    email = "thosjleeper@gmail.com"))
+                    email = "thosjleeper@gmail.com",
+                    comment = c(ORCID = "0000-0003-4097-6326")))
 Description: A simple client for the Amazon Web Services ('AWS') 'DynamoDB' <https://aws.amazon.com/dynamodb/> 'API'.
 License: GPL (>= 2)
 URL: https://github.com/cloudyr/aws.dynamodb
