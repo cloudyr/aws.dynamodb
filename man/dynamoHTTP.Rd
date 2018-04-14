@@ -4,12 +4,21 @@
 \alias{dynamoHTTP}
 \title{Execute Dynamo DB API Request}
 \usage{
-dynamoHTTP(verb = "GET", body = NULL, target,
+dynamoHTTP(verb = "GET", headers = list(), body = NULL, target,
+  verbose = getOption("verbose", FALSE),
   region = Sys.getenv("AWS_DEFAULT_REGION", "us-east-1"), key = NULL,
   secret = NULL, session_token = NULL, ...)
 }
 \arguments{
 \item{verb}{A character string specifying an HTTP verb for the operation.}
+
+\item{headers}{A list of headers to pass to the HTTP request.}
+
+\item{body}{A list of body (JSON) arguments.}
+
+\item{target}{An API endpoint.}
+
+\item{verbose}{A logical indicating whether to be verbose. Default is given by \code{options("verbose")}.}
 
 \item{region}{A character string containing an AWS region. If missing, the default \dQuote{us-east-1} is used.}
 
@@ -19,7 +28,7 @@ dynamoHTTP(verb = "GET", body = NULL, target,
 
 \item{session_token}{Optionally, a character string containing an AWS temporary Session Token. See \code{\link[aws.signature]{locate_credentials}}.}
 
-\item{...}{Additional arguments passed to \code{\link[httr]{GET}}.}
+\item{\dots}{Additional arguments passed to \code{\link[httr]{GET}}.}
 }
 \value{
 If successful, a named list. Otherwise, a data structure of class \dQuote{aws-error} containing any error message(s) from AWS and information about the request attempt.
