@@ -1,7 +1,7 @@
 Package: aws.dynamodb
 Type: Package
 Title: Amazon Web Services DynamoDB Client Package
-Version: 0.1.1
+Version: 0.1.2
 Date: 2018-08-20
 Authors@R: c(person("Thomas J.", "Leeper", role = c("aut", "cre"),
                     email = "thosjleeper@gmail.com",

@@ -17,3 +17,6 @@ A list.
 \description{
 Get a description of a Dynamo DB tables
 }
+\references{
+\href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetTable.html}{API Guide: GetTable}
+}

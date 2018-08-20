@@ -22,6 +22,10 @@ A list.
 \description{
 Create a backup of a Dynamo DB table, or restore a table from a backup
 }
+\references{
+\href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateBackup.html}{API Guide: CreateBackup}
+  \href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableFromBackup.html}{API Guide: RestoreTableFromBackup}
+}
 \seealso{
 \code{\link{list_backups}}
 }

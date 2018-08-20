@@ -4,8 +4,10 @@
 #' @param n A number between 1 and 100 specifying the total number of tables to return
 #' @param \dots Additional arguments passed to \code{\link{dynamoHTTP}}.
 #' @return A list of backup tables.
+#' @references
+#'   \href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListBackups.html}{API Guide: ListBackups}
 #' @export
-list_tables <- function(marker = NULL, n = 100, ...) {
+list_table_backups <- function(marker = NULL, n = 100, ...) {
     stopifnot(n <= 100 & n >= 1)
     bod <- list(Limit = n)
     if (!is.null(marker)) {

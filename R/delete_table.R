@@ -3,6 +3,8 @@
 #' @param table A character string specifying the table name, or an object of class \dQuote{aws_dynamodb_table}.
 #' @param \dots Additional arguments passed to \code{\link{dynamoHTTP}}.
 #' @return A list.
+#' @references
+#'   \href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteTable.html}{API Guide: DeleteTable}
 #' @export
 delete_table <- function(table, ...) {
     bod <- list(TableName = get_tablename(table))

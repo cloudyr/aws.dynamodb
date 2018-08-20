@@ -15,6 +15,11 @@ delete_item(table, item, ...)
 }
 \value{
 A list.
+}
+\description{
+Get an item from a Dynamo DB tables
+}
+\examples{
 \dontrun{
   tab <- create_table(
     table = "Music",
@@ -35,6 +40,6 @@ A list.
   delete_table(tab)
 }
 }
-\description{
-Get an item from a Dynamo DB tables
+\references{
+\href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html}{API Guide: DeleteItem}
 }

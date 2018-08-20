@@ -4,6 +4,9 @@
 #' @param item A list of key-value pairs. If the table only has a primary key, this should specify the primary key attribute name and value for the desired item. If a composite primary key is used, then both attribute names and values must be specified.
 #' @param \dots Additional arguments passed to \code{\link{dynamoHTTP}}.
 #' @return A list.
+#' @references
+#'   \href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html}{API Guide: DeleteItem}
+#' @examples
 #' \dontrun{
 #'   tab <- create_table(
 #'     table = "Music",

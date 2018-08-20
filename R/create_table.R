@@ -9,6 +9,7 @@
 #' @param write_capacity A number specifying write capacity units (i.e., number of reads per second). See References.
 #' @param \dots Additional arguments passed to \code{\link{dynamoHTTP}}.
 #' @references
+#'   \href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html}{API Guide: CreateTable}
 #'   \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html}{Provisioned Throughput}
 #'   \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey}{Primary Key}
 #' @examples

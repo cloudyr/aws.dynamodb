@@ -5,7 +5,8 @@
 \alias{update_item}
 \title{Put an item}
 \usage{
-put_item(table, item, return_value = c("NONE", "ALL_OLD"), ...)
+put_item(table, item, condition = NULL, return_value = c("NONE", "ALL_OLD"),
+  ...)
 
 update_item(table, item, return_value = c("NONE", "ALL_OLD"), ...)
 }
@@ -13,6 +14,8 @@ update_item(table, item, return_value = c("NONE", "ALL_OLD"), ...)
 \item{table}{A character string specifying the table name, or an object of class \dQuote{aws_dynamodb_table}.}
 
 \item{item}{A list of key-value pairs.}
+
+\item{condition}{Optionally, a \dQuote{ConditionExpression} that determines whether the item is added. This can prevent overwriting. See \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html}{User Guide: Condition Expressions}.}
 
 \item{return_value}{A character string specifying whether to return previous values of the item.}
 
@@ -38,4 +41,8 @@ Put an item into a Dynamo DB database
   # cleanup
   delete_table(tab)
 }
+}
+\references{
+\href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html}{API Guide: PutItem}
+  \href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html}{API Guide: UpdateItem}
 }

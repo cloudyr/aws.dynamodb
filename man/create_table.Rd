@@ -40,6 +40,7 @@ Create or update a Dynamo DB Table
 }
 }
 \references{
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html}{Provisioned Throughput}
+\href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html}{API Guide: CreateTable}
+  \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html}{Provisioned Throughput}
   \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey}{Primary Key}
 }

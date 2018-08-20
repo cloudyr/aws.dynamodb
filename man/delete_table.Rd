@@ -17,3 +17,6 @@ A list.
 \description{
 Delete a Dynamo DB table
 }
+\references{
+\href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteTable.html}{API Guide: DeleteTable}
+}

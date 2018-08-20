@@ -15,13 +15,18 @@ get_item(table, item, ...)
 }
 \value{
 A list.
+}
+\description{
+Get an item from a Dynamo DB tables
+}
+\examples{
 \dontrun{
   tab <- create_table(
     table = "Music",
     attributes = list(Artist = "S"),
     primary_key = "Artist"
   )
-
+  
   # put item
   put_item("Music", list(Artist = "No One You Know", SongTitle = "Call Me Today"))
 
@@ -32,6 +37,7 @@ A list.
   delete_table(tab)
 }
 }
-\description{
-Get an item from a Dynamo DB tables
+\references{
+\href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html}{API Guide: GetItem}
+  \href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html}{API Guide: BatchGetItem}
 }

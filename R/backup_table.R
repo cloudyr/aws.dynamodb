@@ -5,6 +5,9 @@
 #' @param backup For creating: a character string specifying the backup table name. For restoring: a backup table ARN.
 #' @param \dots Additional arguments passed to \code{\link{dynamoHTTP}}.
 #' @return A list.
+#' @references
+#'   \href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateBackup.html}{API Guide: CreateBackup}
+#'   \href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableFromBackup.html}{API Guide: RestoreTableFromBackup}
 #' @seealso \code{\link{list_backups}}
 #' @export
 create_table_backup <- function(table, backup, ...) {
