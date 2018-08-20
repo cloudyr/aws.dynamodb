@@ -32,7 +32,7 @@ function(
   ...
 ) {
     # locate and validate credentials
-    credentials <- locate_credentials(key = key, secret = secret, session_token = session_token, region = region, verbose = verbose)
+    credentials <- aws.signature::locate_credentials(key = key, secret = secret, session_token = session_token, region = region, verbose = verbose)
     key <- credentials[["key"]]
     secret <- credentials[["secret"]]
     session_token <- credentials[["session_token"]]
@@ -41,7 +41,7 @@ function(
     # generate request signature
     d_timestamp <- format(Sys.time(), "%Y%m%dT%H%M%SZ", tz = "UTC")
     url <- paste0("dynamodb.",region,".amazonaws.com")
-    Sig <- signature_v4_auth(
+    Sig <- aws.signature::signature_v4_auth(
            datetime = d_timestamp,
            region = region,
            service = "dynamodb",
@@ -63,25 +63,25 @@ function(
     if (!is.null(session_token) && session_token != "") {
         headers[["x-amz-security-token"]] <- session_token
     }
-    H <- do.call(add_headers, headers)
+    H <- do.call(httr::add_headers, headers)
     
     # execute request
     if (verb == "GET") {
-        r <- GET(url, H, body = body, encode = "json", ...)
+        r <- httr::GET(url, H, body = body, encode = "json", ...)
     } else if (verb == "POST") {
-        r <- POST(url, H, body = body, encode = "json", ...)
+        r <- httr::POST(url, H, body = body, encode = "json", ...)
     } else if (verb == "POST") {
-        r <- PUT(url, H, body = body, encode = "json", ...)
+        r <- httr::PUT(url, H, body = body, encode = "json", ...)
     } else if (verb == "DELETE") {
-        r <- DELETE(url, H, encode = "json", ...)
-        if (!http_error(r)) {
+        r <- httr::DELETE(url, H, encode = "json", ...)
+        if (!httr::http_error(r)) {
             return(TRUE)
         }
     }
-    cont <- content(r, "text", encoding = "UTF-8")
-    if (http_error(r)) {
-        warn_for_status(r)
-        h <- headers(r)
+    cont <- httr::content(r, "text", encoding = "UTF-8")
+    if (httr::http_error(r)) {
+        httr::warn_for_status(r)
+        h <- httr::headers(r)
         out <- try(structure(jsonlite::fromJSON(cont), headers = h, class = "aws_error"))
         if (inherits(out, "try-error")) {
             out <- xml2::as_list(xml2::read_xml(cont))
